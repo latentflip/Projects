@@ -2,6 +2,7 @@
 $(document).ready(function () {
 	$('#searchbox').keyup(function(event) {
 		var search_text = $('#searchbox').val();
+		search_text = search_text.split(' ').join('.*');
 		var rg = new RegExp(search_text,'i');
 		$('#nav li').each(function(){
  			if($.trim($(this).html()).search(rg) == -1) {
